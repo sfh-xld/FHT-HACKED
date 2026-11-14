@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://djn5wdsrjmg6o"]
+
+[ext_resource type="Script" uid="uid://imsurqstwmdn" path="res://SCRIPT/santabot.gd" id="1_f57sm"]
+[ext_resource type="Texture2D" uid="uid://b588hvnbbpwv" path="res://ASSETS/ROBO WITH HANDS-SANTA_SKIN.png" id="1_w7asw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f57sm"]
+atlas = ExtResource("1_w7asw")
+region = Rect2(96, 33, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83vks"]
+atlas = ExtResource("1_w7asw")
+region = Rect2(64, 33, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0tgr"]
+atlas = ExtResource("1_w7asw")
+region = Rect2(32, 33, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_os3o0"]
+atlas = ExtResource("1_w7asw")
+region = Rect2(0, 33, 32, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wp5od"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f57sm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83vks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0tgr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_os3o0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wp5od"]
+radius = 7.071068
+
+[node name="SANTABOT" type="CharacterBody2D" unique_id=198361501]
+script = ExtResource("1_f57sm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1887768455]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_wp5od")
+frame = 1
+frame_progress = 0.9790515
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1042573866]
+position = Vector2(1, -7)
+shape = SubResource("CircleShape2D_wp5od")

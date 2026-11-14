@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bj85ssc2cjxa1"]
+
+[ext_resource type="Script" uid="uid://ds0g3316y48hc" path="res://SCRIPT/smash.gd" id="1_ag4lo"]
+[ext_resource type="Texture2D" uid="uid://cfak6c4d06tvy" path="res://ASSETS/SpaceStation_tileset.png" id="1_fppwl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wp5od"]
+size = Vector2(32, 30)
+
+[node name="SMASH" type="AnimatableBody2D" unique_id=2044580134]
+script = ExtResource("1_ag4lo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2079424954]
+texture = ExtResource("1_fppwl")
+region_enabled = true
+region_rect = Rect2(256, 224.59998, 34.400024, 30.40001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=201537997]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_wp5od")
